@@ -36,6 +36,7 @@ pip install streamlit ffmpeg-python whisper mtranslate moviepy gtts pydub
 ```
 
 **Usage**
+
 Run the Application: Open a terminal, navigate to the directory containing app.py, and run:
 ```bash
 streamlit run app.py
