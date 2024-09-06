@@ -2,7 +2,7 @@
 
 This project is a Streamlit application that allows users to upload videos, select target languages, and get translations in those languages. The application converts the video to audio, transcribes the audio to text, translates the text into selected languages, and then combines the translations with the original video.
 
-**Features**
+## **Features**
 
 - Upload video files and select target languages for translation.
 
@@ -12,7 +12,7 @@ This project is a Streamlit application that allows users to upload videos, sele
 
 - Make translations and final videos available for download.
 
-**Requirements**
+## **Requirements**
 
 - Python 3.8 or higher
 
@@ -35,7 +35,7 @@ To install the required packages:
 pip install streamlit ffmpeg-python whisper mtranslate moviepy gtts pydub
 ```
 
-**Usage**
+## **Usage**
 
 Run the Application: Open a terminal, navigate to the directory containing app.py, and run:
 ```bash
@@ -50,10 +50,10 @@ Start Translation: Click the Start Translation button to begin the video process
 
 Results: Once the process is complete, the translations and final video will be available for download.
 
-**Contributing**
+## **Contributing**
 
 If you wish to contribute, please submit a pull request or check out the issue tracker.
 
-**License**
+## **License**
 
 This project is licensed under the MIT License.
