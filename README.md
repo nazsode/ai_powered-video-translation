@@ -1,4 +1,4 @@
-#**AI-Powered Video Translation Application**
+#AI-Powered Video Translation Application
 
 This project is a Streamlit application that allows users to upload videos, select target languages, and get translations in those languages. The application converts the video to audio, transcribes the audio to text, translates the text into selected languages, and then combines the translations with the original video.
 
