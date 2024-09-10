@@ -6,8 +6,6 @@ import whisper
 from mtranslate import translate
 from moviepy.editor import VideoFileClip, AudioFileClip
 from gtts import gTTS
-from pydub import AudioSegment
-from pydub.effects import speedup
 
 # Define some custom CSS for styling
 st.markdown("""
@@ -104,14 +102,6 @@ def text_to_audio(text, language_code):
     tts.save(audio_path)
     return audio_path
 
-# Ses dosyalarını hızlılaştırma fonksiyonu
-def speed_up_audio(audio_path):
-    audio_segment = AudioSegment.from_mp3(audio_path)
-    faster_audio_segment = speedup(audio_segment, playback_speed=1.0)
-    faster_audio_path = f"faster_{os.path.basename(audio_path)}"
-    faster_audio_segment.export(faster_audio_path, format="mp3")
-    return faster_audio_path
-
 # Eğer video yüklendiyse ve diller seçildiyse
 if uploaded_video is not None and st.session_state.selected_languages:
     st.write("Video dosyası başarıyla yüklendi.")
@@ -149,11 +139,10 @@ if uploaded_video is not None and st.session_state.selected_languages:
             language_code = get_language_code(language_name)
             translation = st.session_state.translations[language_code]
             audio_path = text_to_audio(translation, language_code)
-            faster_audio_path = speed_up_audio(audio_path)
 
             # Final ses dosyasını videoya ekleme
             video = VideoFileClip(temp_video_path)
-            audio = AudioFileClip(faster_audio_path)
+            audio = AudioFileClip(audio_path)
             final_video = video.set_audio(audio)
             final_video_path = f"final_video_{language_name}.mp4"
             final_video.write_videofile(final_video_path, codec='libx264')
